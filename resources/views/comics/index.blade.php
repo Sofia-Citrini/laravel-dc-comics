@@ -18,16 +18,18 @@
       <tbody>
         @foreach ($comics as $comic)
             <tr>
-                <td>{{$comic->title}}</td>
+                <td><a href="{{route('comics.show', $comic->id)}}">{{$comic->title}}</a></td>
                 <td>{{Str::limit($comic->description, 60)}}</td>
                 <td>{{$comic->serie}}</td>
                 <td>{{$comic->type}}</td>
-                <td>{{date('d-m-Y', strtotime($comic->sale_date))}}</td>
+                <td>{{date('d/m/Y', strtotime($comic->sale_date))}}</td>
                 <td>€ {{number_format($comic->price, 2, ',')}}</td>
             </tr>
         @endforeach
       </tbody>
 </table>
+
+<a class="py-5" href="{{route('home')}}">Home</a>
 
     
 @endsection
