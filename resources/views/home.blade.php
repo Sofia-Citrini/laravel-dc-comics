@@ -4,6 +4,8 @@
 
 <h3 class="text-center">Scopri tutti i nostri fumetti</h3>
 
+<a class="btn btn-primary my-4" href="{{route('comics.index')}}">Tabella Fumetti</a>
+
 <div class="row py-3 g-3">
 
     @foreach ($comics as $comic)
@@ -20,7 +22,5 @@
         </div>   
     @endforeach
 </div>
-
-<a class="btn btn-primary my-4" href="{{route('comics.index')}}">Tabella Fumetti</a>
     
 @endsection
