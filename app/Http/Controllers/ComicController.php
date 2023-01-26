@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
+    public function home(){
+        $comics = Comic::all();
+
+        return view('home', compact('comics'));
+    }
+
     /**
      * Display a listing of the resource.
      *
