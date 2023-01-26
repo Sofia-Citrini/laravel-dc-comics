@@ -44,8 +44,17 @@ class ComicController extends Controller
         $data = $request->all();
 
         //creo una nuova riga nel database
+        $newComic = new Comic();
+        $newComic->title = $data['title'];
+        $newComic->description = $data['description'];
+        $newComic->thumb = $data['thumb'];
+        $newComic->price = (float) $data['price'];
+        $newComic->serie = $data['serie'];
+        $newComic->sale_date = $data['sale_date'];
+        $newComic->type = $data['type'];
+        $newComic->save();
 
-        // return redirect()->route('comic.show', $newComic->id);
+        return redirect()->route('comics.show', $newComic->id);
     }
 
     /**

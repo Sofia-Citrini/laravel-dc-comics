@@ -4,6 +4,11 @@
 
 <h3 class="text-center py-3">Tabella fumetti</h3>
 
+<div class="my-4">
+  <a class="btn btn-info" href="{{route('home')}}">Home</a>
+  <a class="ms-4 btn btn-info" href="{{route('comics.create')}}">Crea nuovo fumetto</a>
+</div>
+
 <table class="table table-striped">
     <thead>
         <tr>
@@ -29,7 +34,6 @@
       </tbody>
 </table>
 
-<a class="py-5" href="{{route('home')}}">Home</a>
 
     
 @endsection

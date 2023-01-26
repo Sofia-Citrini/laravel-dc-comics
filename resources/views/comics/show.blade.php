@@ -18,8 +18,11 @@
     </div>
 </div>
 
-<a href="{{route('home')}}">Home</a>
-<a class="ps-5" href="{{route('comics.index')}}">Tabella Fumetti</a>
+<div class="py-4">
+    <a href="{{route('home')}}">Home</a>
+    <a class="ps-5" href="{{route('comics.index')}}">Tabella Fumetti</a>
+</div>
+
 
 
     

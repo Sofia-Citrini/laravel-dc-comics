@@ -21,6 +21,6 @@
     @endforeach
 </div>
 
-<a class="btn btn-primary" href="{{route('comics.index')}}">Tabella Fumetti</a>
+<a class="btn btn-primary my-4" href="{{route('comics.index')}}">Tabella Fumetti</a>
     
 @endsection
