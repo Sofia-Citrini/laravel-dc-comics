@@ -17,6 +17,7 @@
           <th scope="col">Data di vendita</th>
           <th scope="col">Prezzo</th>
           <th scope="col">Modifica</th>
+          <th scope="col">Elimina</th>
         </tr>
       </thead>
       <tbody>
@@ -26,7 +27,17 @@
                 <td>{{Str::limit($comic->description, 60)}}</td>
                 <td>{{date('d/m/Y', strtotime($comic->sale_date))}}</td>
                 <td>€ {{number_format($comic->price, 2, ',')}}</td>
-                <td><a href="{{route('comics.edit', $comic->id)}}">mod</a></td>
+                <td><a href="{{route('comics.edit', $comic->id)}}" class="text-decoration-none btn btn-outline-dark">&#10002;</a></td>
+                <td>
+                  <form action="{{route('comics.destroy', $comic->id)}}" method="POST" class="d-inline-block">
+                    @csrf
+        
+                    @method('delete')
+        
+                    <button class="btn btn-danger">&#128465;</button>
+                  </form>
+                  
+                </td>
             </tr>
         @endforeach
       </tbody>

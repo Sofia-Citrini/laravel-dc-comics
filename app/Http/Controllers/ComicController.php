@@ -87,7 +87,6 @@ class ComicController extends Controller
     public function update(Request $request, $id){
         
         $data = $request->all();
-        // $comic->update($data);
 
         $comic = Comic::findOrFail($id);
         $comic->update($data);
@@ -101,8 +100,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy(Comic $comic){
+        $comic->delete();
+
+        return redirect()->route('home');
     }
 }

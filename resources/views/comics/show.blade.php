@@ -17,6 +17,14 @@
         <div class="fw-bold py-3">€ {{number_format($comic->price, 2, ',')}}</div>
 
         <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-primary my-3">Modifica fumetto</a>
+
+        <form action="{{route('comics.destroy', $comic->id)}}" method="POST" class="d-inline-block">
+            @csrf
+
+            @method('delete')
+
+            <button class="btn btn-danger">Elimina fumetto</button>
+        </form>
     </div>
 
 </div>
