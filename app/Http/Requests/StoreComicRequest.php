@@ -33,4 +33,15 @@ class StoreComicRequest extends FormRequest
             'sale_date' => 'date'
         ];
     }
+
+    public function messages(){
+        return [
+            'title.required' => 'Il titolo del fumetto é obbligatorio',
+            'description.required' => 'La descrizione del fumetto é obbligatorio',
+            'thumb.required' => "L'immagine di copertina del fumetto é obbligatoria",
+            'thumb.url' => "L'immagine di copertina deve essere fornita tramite url",
+            'price.required' => "Il prezzo del fumetto é obbligatorio",
+            'sale_date.date' => "Inserire una data corretta",
+        ];
+    }
 }
